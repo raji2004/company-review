@@ -14,41 +14,76 @@ A FastAPI-based REST API for monitoring company reviews from Trustpilot with aut
 
 ## Setup
 
-0. setup virtual environment
+### Quick Start (Recommended)
 
-```bash
-python -m venv venv
-```
+Use the provided bash scripts for easy setup:
 
-1 activate virtual environment
+1. **Setup virtual environment and dependencies:**
 
-```bash
-source venv/bin/activate
-```
+   ```bash
+   ./setupVirtualEnv.sh
+   ```
 
-2. Install dependencies:
+   _This script creates a virtual environment, activates it, and installs all dependencies from requirements.txt_
 
-```bash
-pip install -r requirements.txt
-```
+2. **Configure environment (optional):**
+  Create a `.env` file with:
 
-3. Configure environment (optional):
+  ```bash
+  RAPIDAPI_KEY=f087850b41mshb3c7794a5fe78b0p1006edjsn8cc54b6de0ef
+  SECRET_KEY=your-super-secret-jwt-key
+  ALGORITHM=HS256
+  ACCESS_TOKEN_EXPIRE_MINUTES=30
+  ```
+
+3. **Start the application:**
+   ```bash
+   ./start.sh
+   ```
+   _This script installs dependencies (if needed) and runs the FastAPI application_
+
+### Manual Setup (Alternative)
+
+0. **Setup virtual environment:**
+
+   ```bash
+   python -m venv venv
+   ```
+
+1. **Activate virtual environment:**
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+2. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configure environment (optional):**
    Create a `.env` file with:
 
-```bash
-RAPIDAPI_KEY=your-rapidapi-key
-SECRET_KEY=your-super-secret-jwt-key
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-```
+   ```bash
+   RAPIDAPI_KEY=f087850b41mshb3c7794a5fe78b0p1006edjsn8cc54b6de0ef
+   SECRET_KEY=your-super-secret-jwt-key
+   ALGORITHM=HS256
+   ACCESS_TOKEN_EXPIRE_MINUTES=30
+   ```
 
-4. Run the application:
-
-```bash
-python main.py
-```
+4. **Run the application:**
+   ```bash
+   python main.py
+   ```
 
 The API will be available at `http://localhost:8000`
+
+> **Note:** Make sure to make the bash scripts executable before running them:
+>
+> ```bash
+> chmod +x setupVirtualEnv.sh start.sh
+> ```
 
 ## Default User
 
